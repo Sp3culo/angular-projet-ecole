@@ -1,0 +1,51 @@
+<div class="create-knowledge-question">
+  <form [formGroup]="reactiveKnowledgeForm" (ngSubmit)="handleSubmit()" >
+    <div class="question-card">
+      <label for="question">Question</label>
+      <input id="question" type="text" formControlName="question">
+      <span class="error" *ngIf="reactiveKnowledgeForm.get('question')?.hasError('required')">
+        Le champs est requis
+      </span>
+      <span class="error" *ngIf="reactiveKnowledgeForm.get('question')?.hasError('minlength')">
+        Le champs doit comporter au moins 10 caractères
+      </span>
+    </div>
+
+      <ng-container formArrayName="answers">
+        <div class="response" *ngFor="let _ of myReactiveKnowledgeFormAnswers().controls; let i = index" [formGroupName]="i">
+          <label>Réponse {{i+1}}</label>
+          <div>
+            <input type="text" formControlName="label">
+            <div>
+              <select formControlName="correct">
+                <option value="">Bonne ou mauvaise réponse ?</option>
+                <option value="yes">Bonne réponse</option>
+                <option value="no">Mauvaise réponse</option>
+              </select>
+            </div>
+          </div>
+          <button (click)="deleteNewResponse(i)" type="button">Remove</button>
+
+          <div class="erro-card">
+            <script>console.log()</script>
+              <span class="error" *ngIf="myReactiveKnowledgeFormAnswers().controls[i].get('label')?.hasError('required')">
+                Le champs est requis [indiquer une réponse]
+              </span>
+
+              <span class="error" *ngIf="myReactiveKnowledgeFormAnswers().controls[i].get('label')?.hasError('minlength')">
+                Le champs doit comporter au moins 4 caractères
+              </span>
+
+              <span class="error" *ngIf="myReactiveKnowledgeFormAnswers().controls[i].get('correct')?.hasError('required')">
+                Le champs est requis [indiquer s'il s'agit d'une bonne ou mauvaise réponse]
+              </span>
+          </div>
+        </div>
+      </ng-container>
+    <button (click)="addNewResponse()" type="button">Add</button>
+
+    <button class="validateForm" type="submit" [disabled]="!reactiveKnowledgeForm.valid">Valider</button>
+  </form>
+
+<!--  <app-toaster *ngIf="toaster" [message]=result.message [success]=result.sucess [error]=result.error></app-toaster>-->
+</div>

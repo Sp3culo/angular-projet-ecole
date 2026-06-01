@@ -1,0 +1,72 @@
+.create-knowledge-question {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  min-height: 100vh;
+  form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 50%;
+    background-color: hsla(	0, 0, 100, 0.8);
+    padding: 2em;
+
+    .question-card{
+      width: 100%;
+    }
+    .erro-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: first baseline;
+      align-content: center;
+      width: 100%;
+    }
+
+    .response {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+
+    label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2em;
+      margin-right: 1em;
+    }
+
+    input, select {
+      min-width: 15em;
+      border: none;
+      background-color: whitesmoke;
+      border-bottom: solid gray 0.5px;
+    }
+
+    input {
+      height: 2em;
+    }
+
+    input, select, span {
+      font-family: 'Urbanist', sans-serif;
+    }
+    span.error {
+      color: indianred;
+      font-style: italic;
+    }
+
+    span.underline{
+      text-decoration: underline;
+    }
+  }
+}

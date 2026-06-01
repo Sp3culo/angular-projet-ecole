@@ -1,0 +1,51 @@
+.sign-in {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .content {
+    background-color: hsla(	0, 0, 100, 0.8);
+    flex-direction: column;
+    width: 25%;
+    padding: 2em;
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5em;
+    }
+
+    form {
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2em;
+      }
+
+      .erro-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      label {
+        margin-right: 1em;
+      }
+
+      input, label, span {
+        font-family: 'Urbanist', sans-serif;
+      }
+
+      span.error {
+        color: indianred;
+        font-style: italic;
+      }
+
+      span.underline{
+        text-decoration: underline;
+      }
+    }
+  }
+}

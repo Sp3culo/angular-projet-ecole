@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  background-image: linear-gradient(to right, #053178, #DD5C0E, #27B07C, #053178);
+  padding: 2em 0 2em;
+  opacity: 0.75;
+
+  img {
+    margin-right: 1em;
+    margin-left: 1em;
+  }
+
+  a {
+    font-family: 'Urbanist', sans-serif;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: whitesmoke;
+    }
+
+    &:active {
+      color: deeppink;
+    }
+
+    &.visited {
+      color: #fff;
+    }
+  }
+}

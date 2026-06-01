@@ -1,0 +1,30 @@
+<div class="sign-in">
+  <div class="content">
+    <h1>Je me connecte</h1>
+
+    <form [formGroup]="reactiveSignInForm" (ngSubmit)="handleSubmit()">
+      <div>
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" id="username" formControlName="username">
+      </div>
+
+      <div>
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" formControlName="password">
+      </div>
+
+      <div class="erro-card">
+        <span class="error" *ngIf="reactiveSignInForm.get('username')?.hasError('required')">
+          Le champs <span class="underline">Nom d'utilisateur</span> est requis
+        </span>
+
+        <span class="error" *ngIf="reactiveSignInForm.get('password')?.hasError('required')">
+            Le champs <span class="underline">Mot de passe</span> est requis
+        </span>
+      </div>
+
+      <button *ngIf="!loader" class="validateForm" type="submit" [disabled]="!reactiveSignInForm.valid">Valider</button>
+<!--      <button class="faIcon" [disabled]="true"><i class="fa-solid fa-spinner fa-spin-pulse"></i> sss</button>-->
+    </form>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="form-reactive component">
+    <h1>Reactive form</h1>
+
+    <form [formGroup]="reactiveSuperheroForm" (ngSubmit)="handleSubmit()" >
+        <div>
+            <label for="superhero-name">Superhero Name: </label>
+            <input id="superhero-name" type="text" formControlName="superheroName">
+        </div>
+
+        <div>
+            <label for="superhero-hobby">Superhero hobby: </label>
+            <input id="superhero-hobby" type="text" formControlName="superheroHobby">
+        </div>
+      <div>
+        <label for="superhero-phone">Superhero phone: </label>
+        <input id="superhero-phone" type="text" formControlName="superheroPhone">
+      </div>
+
+        <div formGroupName="superheroPet">
+            <div>
+                <label for="pet-type">Pet type: </label>
+                <input id="pet-type" type="text" formControlName="petType">
+            </div>
+
+            <div>
+                <label for="pet-name">Pet name: </label>
+                <input id="pet-name" type="text" formControlName="petName">
+            </div>
+
+            <div>
+                <label for="pet-color">Pet color: </label>
+                <input id="pet-color" type="text" formControlName="petColor">
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!reactiveSuperheroForm.valid">Submit</button>
+
+    </form>
+
+    <div *ngIf="superheroName && superheroHobby && superheroPet">
+        <hr>
+        Your response :
+        <ul>
+            <li><span class="strong">Name</span> :  {{ superheroName }}</li>
+            <li><span class="strong">Hobby</span> : {{ superheroHobby }}</li>
+            <li><span class="strong">Pet</span> :
+                <ul>
+                    <li>{{ superheroPet.type }}</li>
+                    <li>{{ superheroPet.name }}</li>
+                    <li>{{ superheroPet.color }}</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

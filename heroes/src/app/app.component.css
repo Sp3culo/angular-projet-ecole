@@ -1,0 +1,12 @@
+.content > div > nav > div > ul > li {
+    list-style: none;
+}
+
+.content > div > nav > div > ul > li > a {
+    color: #282A36;
+}
+
+.content > div > nav > div > ul > li > a:hover {
+    color: #FFB86C;
+    font-weight: bolder;
+}

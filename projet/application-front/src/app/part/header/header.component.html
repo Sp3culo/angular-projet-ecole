@@ -1,0 +1,52 @@
+<div class="header">
+  <div class="toolbar" role="banner">
+    <div>
+      <nav>
+        <ul>
+          <li><a routerLink="/">Accueil</a></li>
+          <li><a routerLink="/general-knowledge">Culture générale</a></li>
+          <li *ngIf="authService.isAdmin()"><a routerLink="/general-knowledge/create">Ajouter une question</a> </li>
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <nav>
+        <ul>
+          <li *ngIf="!authService.isAuth()">
+            <button (click)="goToSignIn()">
+              Sign in
+            </button>
+          </li>
+          <li *ngIf="!authService.isAuth()">
+            <button (click)="goToSignUp()">
+              Sign up
+            </button>
+          </li>
+          <li *ngIf="authService.isAuth()">
+            <button (click)="handleLogout()">
+              Logout
+            </button>
+          </li>
+          <li *ngIf="authService.isAuth()">
+            <button class="danger" (click)="handleDelete()">
+              Delete account
+            </button>
+          </li>
+
+          <li *ngIf="authService.isAuth()">
+            <button (click)="viewAccount()">
+              Account
+            </button>
+          </li>
+          <li *ngIf="authService.isAuth() && authService.isAdmin()">
+            <button (click)="goToAdmin()">
+              Admin
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <app-modal *ngIf="viewProfil" [title]="modalTitle" (close)="closeAccount()"></app-modal>
+</div>

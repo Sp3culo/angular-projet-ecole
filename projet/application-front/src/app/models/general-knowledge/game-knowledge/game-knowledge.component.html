@@ -1,0 +1,14 @@
+<div class="game-knowledge">
+  <ng-container *ngIf="currentQuestion; else noMoreQuestions">
+    <h1>{{ currentQuestion.label }}</h1>
+    <div class="game-knowledge-cards">
+      <form *ngFor="let responses of currentQuestion?.reponses">
+        <button (click)="handleSubmit(responses?.id)" type="button">{{ responses?.label }}</button>
+      </form>
+    </div>
+  </ng-container>
+
+  <ng-template #noMoreQuestions>
+    <h1>Bravo, toutes les questions ont été répondues !</h1>
+  </ng-template>
+</div>

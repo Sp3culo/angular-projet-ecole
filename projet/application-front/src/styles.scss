@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
+
+body {
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+button {
+  border: none;
+}
+
+button.validateForm, button.faIcon {
+  width: 20em;
+  height: 3em;
+  margin: 2em 1em;
+  border-radius: 25px;
+  background-color: transparent;
+  box-shadow: grey 1.95px 1.95px 4px, -1.95px -1.95px 4px white;
+  transition: box-shadow 1ms 1ms;
+}
+
+button.validateForm {
+  &:hover:is([disabled]) {
+    cursor: not-allowed;
+  }
+
+  &:hover:not([disabled]) {
+    box-shadow: inset grey 1.95px 1.95px 4px, inset -1.95px -1.95px 4px white;
+  }
+}

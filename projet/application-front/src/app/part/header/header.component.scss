@@ -1,0 +1,78 @@
+.header {
+  background-image: linear-gradient(to right, #682A86, #F77A7A, #FFEFA3, #0F808D, #036E9B);
+  opacity: 0.75;
+
+  .toolbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    ul {
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+
+      li {
+        list-style: none;
+        margin: 5px;
+        padding: 5px;
+
+        button {
+          background-color: #036E9B;
+          border: none;
+          box-shadow: #02597e 1.95px 1.95px 4px, -1.95px -1.95px 4px #0086be;
+          border-radius: 25px;
+          width: 10em;
+          height: 2.5em;
+          transition: box-shadow 1ms 1ms;
+          color: #fff;
+
+          &.danger {
+            background-color: indianred;
+            box-shadow: #a94c4c 1.95px 1.95px 4px, -1.95px -1.95px 4px #e06666;
+
+            &:hover {
+              box-shadow: inset #a94c4c 1.95px 1.95px 4px, -1.95px -1.95px 4px #e06666;
+            }
+
+            &:active {
+              background-color: #a64b4b;
+              box-shadow: inset #a94c4c 1.95px 1.95px 4px, -1.95px -1.95px 4px #e06666;
+            }
+          }
+
+          &:hover {
+            box-shadow: inset #02597e 1.95px 1.95px 4px, inset -1.95px -1.95px 4px #0086be;
+          }
+
+          &:active {
+            background-color: #02597e;
+            box-shadow: inset #014664 1.95px 1.95px 4px, inset -1.95px -1.95px 4px #036b96;
+          }
+        }
+
+        a {
+          font-family: 'Urbanist', sans-serif;
+          text-decoration: none;
+          color: #FFF;
+
+          &:hover {
+            color: whitesmoke;
+          }
+
+          &:active {
+            color: deeppink;
+          }
+
+          &.visited {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

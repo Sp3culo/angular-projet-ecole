@@ -1,0 +1,12 @@
+.idea/
+.vscode
+projet/application-front/.vscode
+.angular
+.env
+*.pptx
+
+node_modules
+
+projet/application-back/.env
+projet/application-back/src/properties/db.properties.ts
+projet/application-back/README.md

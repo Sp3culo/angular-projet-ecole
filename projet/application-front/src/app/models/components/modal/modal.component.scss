@@ -1,0 +1,31 @@
+.modal {
+  position: absolute;
+  background-color: whitesmoke;
+  top: 60px;
+  right: 0;
+  padding: 46px;
+  margin: 50px;
+  min-width: 23em;
+  z-index: 9999;
+
+  button {
+    background-color: rgba(255, 20, 147, 0.27);
+    border: none;
+    box-shadow: rgba(255, 20, 147, 0.27) 1.95px 1.95px 4px, -1.95px -1.95px 4px rgba(107, 49, 84, 0.89);
+    border-radius: 25px;
+    width: 10em;
+    height: 2.5em;
+    transition: box-shadow 1ms 1ms;
+    color: #000000;
+
+    &:hover {
+      box-shadow: inset rgba(107, 49, 84, 0.89) 1.95px 1.95px 4px, inset -1.95px -1.95px 4px rgba(255, 20, 147, 0.27);
+    }
+
+    &:active {
+      color: #FFFFFF;
+      background-color: rgba(107, 49, 84, 0.89);
+      box-shadow: inset rgba(107, 49, 84, 0.89) 1.95px 1.95px 4px, inset -1.95px -1.95px 4px rgba(255, 20, 147, 0.27);
+    }
+  }
+}

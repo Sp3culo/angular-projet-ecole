@@ -1,0 +1,13 @@
+<div class="counter-page-component">
+    <h1>
+        My counter : {{ counter }}
+    </h1>
+
+    <button (click)="handleClickIncrement()">
+        Increment
+    </button>
+
+    <button (click)="handleClickDecrement()" [disabled]="!clickable">
+        Decrement
+    </button>
+</div>

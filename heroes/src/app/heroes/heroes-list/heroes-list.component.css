@@ -1,0 +1,7 @@
+.heroes-list-component > ul > li > ul > li {
+    list-style: none;
+}
+
+.strong {
+    color: #FF79C6;
+}

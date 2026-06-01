@@ -1,0 +1,24 @@
+<div class="form-component">
+    <h1 *ngIf="superhero !== undefined; else otherTittle">
+       Your favorite super hero : {{ superhero }} 🤩
+    </h1>
+
+    <ng-template #otherTittle>
+        <h1>
+            I don't know (yet) your favorite superhero 😢
+        </h1>
+    </ng-template>
+
+    <form #superheroForm="ngForm" (ngSubmit)="handleSubmit(superheroForm)">
+        <div>
+            <label>
+                Who's your favorite superhero ?
+            </label>
+            <input type="text" name="superhero" required ngModel>
+        </div>
+
+        <button type="submit" >ENVOYER</button>
+    </form>
+
+    ⚠️ Bientôt deprecated ⚠️
+</div>
